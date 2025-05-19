@@ -2,44 +2,127 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Your Name | English Tutor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f2f2f2;
-      color: #333;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
-      padding: 2rem;
+      padding: 0;
+      background: linear-gradient(to right, #dfe9f3, #ffffff);
+      color: #333;
     }
+
+    header {
+      background-color: #4a90e2;
+      padding: 2rem;
+      color: white;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
     .container {
-      max-width: 800px;
-      margin: auto;
-      background: white;
+      max-width: 900px;
+      margin: 2rem auto;
       padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
-    h1 { color: #2c3e50; }
-    a { color: #2980b9; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+
+    h2 {
+      color: #4a90e2;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 1.5rem;
+    }
+
+    a {
+      color: #4a90e2;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #4a90e2;
+      color: white;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+      font-weight: 600;
+    }
+
+    .button:hover {
+      background-color: #357ABD;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #888;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      .container {
+        padding: 1.5rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Hello, I'm [Your Name]!</h1>
-    <p>I’m an English tutor who helps beginners learn grammar, pronunciation, and conversation skills with fun and personalized lessons.</p>
 
-    <h2>🧾 Services Offered</h2>
+  <header>
+    <h1>👋 <span id="greeting"></span> I'm Jane, Your English Tutor</h1>
+    <p>Helping beginners speak confidently, one word at a time.</p>
+  </header>
+
+  <div class="container">
+    <h2>🌟 Services I Offer</h2>
     <ul>
       <li>Beginner English (A1–A2)</li>
-      <li>Conversation Practice</li>
-      <li>Grammar & Vocabulary Help</li>
+      <li>Conversational English & Pronunciation</li>
+      <li>Grammar and Vocabulary Lessons</li>
     </ul>
 
-    <h2>📞 Contact Me</h2>
+    <h2>📅 Book a Free Trial</h2>
+    <p>Want to see if we’re a good match? Let’s meet for a free trial session!</p>
+    <a href="mailto:your.email@example.com?subject=Free Trial Request" class="button">Contact Me</a>
+
+    <h2>📞 Contact Info</h2>
     <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
     <p>WhatsApp: +123 456 7890</p>
   </div>
+
+  <footer>
+    &copy; <span id="year"></span> Jane's English Lessons | Made with 💙
+  </footer>
+
+  <script>
+    // Dynamic greeting based on time of day
+    const greeting = document.getElementById('greeting');
+    const hour = new Date().getHours();
+    greeting.textContent = hour < 12 ? "Good morning!" :
+                           hour < 18 ? "Good afternoon!" : "Good evening!";
+
+    // Update year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
